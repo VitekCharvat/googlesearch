@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --blue-color: #4285f4;
+    --blue-color: #0073e6;
     --green-color: #34a853;
     --yellow-color: #fbbc05;
     --black-color: #333;
@@ -53,7 +53,7 @@ p {
     color: var(--black-color);
 }
 
-.blue {
+/* .blue {
     color: var(--blue-color);
 }
 .green {
@@ -64,7 +64,7 @@ p {
 }
 .red {
     color: var(--red-color);
-}
+} */
 
 main {
     flex: 1;
