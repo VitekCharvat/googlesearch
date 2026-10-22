@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Search</title>
     </head>
@@ -18,14 +19,38 @@
                 <span class="green">l</span>
                 <span class="red">e</span>
             </h1>
-            <form action="https://www.google.com/search">
-                <input type="text" name="q">
-                <input type="submit" value="Advanced search">
+            <form class="advanced-form" action="https://www.google.com/search" method="get">
+                <label>
+                    Všechna tato slova:
+                    <input type="text" name="as_q">
+                </label>
+
+                <label>
+                    Přesné slovo nebo fráze:
+                    <input type="text" name="as_epq">
+                </label>
+
+                <label>
+                    Kterékoli z těchto slov:
+                    <input type="text" name="as_oq">
+                </label>
+
+                <label>
+                    Žádné z těchto slov:
+                    <input type="text" name="as_eq">
+                </label>
+
+                <input type="submit" value="Advanced Search">
             </form>
         </main>
         <footer>
             <p>© 2026 Vít Charvát</p>
             <p>School project</p>
+            <p>Bylo použito AI | <a href="https://chatgpt.com/s/cx_6ada0bc3a26081918828f4266eddad5e" target="_blank" rel="noopener noreferrer">GPT-6 Luna</a></p>
+            <div class="validation-links" role="group" aria-label="Validace stránky">
+                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2Fgooglesearch%2Fadvanced-search.html" target="_blank" rel="noopener noreferrer">Validace HTML</a>
+                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2Fgooglesearch%2Fstyle.css" target="_blank" rel="noopener noreferrer">Validace CSS</a>
+            </div>
         </footer>
     </body>
 </html>
