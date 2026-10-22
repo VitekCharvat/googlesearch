@@ -1,0 +1,215 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #3b5bdb;
+  --accent-dark: #2f49b0;
+  --border: #d1d5db;
+  --danger: #c92a2a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+header,
+footer {
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+header h1 {
+  margin: 0 0 0.25rem;
+}
+header p {
+  margin: 0;
+  opacity: 0.9;
+}
+nav {
+  margin-top: 0.75rem;
+}
+nav a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+fieldset {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+legend {
+  font-weight: 700;
+  color: var(--accent-dark);
+  padding: 0 0.5rem;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+.field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+label,
+.label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+.req {
+  color: var(--danger);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+input[type="color"] {
+  width: 70px;
+  height: 40px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+input[type="range"] {
+  width: 100%;
+}
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+.inline label {
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  font: inherit;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover,
+input[type="submit"]:hover {
+  background: var(--accent-dark);
+}
+button.secondary,
+input[type="reset"],
+input[type="button"] {
+  background: #fff;
+  color: var(--accent);
+}
+button.secondary:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background: #eef1fd;
+}
+button.danger {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+progress,
+meter {
+  width: 100%;
+}
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+.search-form input {
+  flex: 1;
+}
+footer {
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer span {
+  display:flex;
+  justify-content:center;
+}
+
+footer .validation-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}

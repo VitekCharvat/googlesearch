@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="form.css">
+  <title>Formulář – ukázka formulářových prvků</title>
+</head>
+<body>
+
+<header>
+  <h1>Ukázka formulářových prvků</h1>
+  <p>Přehled různých typů formulářů a vstupních prvků v HTML5</p>
+  <nav>
+    <a href="index.html">index.html</a>
+    <a href="form.html">Formulář</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1) Jednoduchý vyhledávací formulář -->
+  <form class="search-form" role="search" action="#" method="get" style="margin-bottom:1.5rem;">
+    <label for="hledat" class="visually-hidden" style="position:absolute;left:-9999px;">Hledat</label>
+    <input type="search" id="hledat" name="q" placeholder="Hledat na stránce…">
+    <button type="submit">Hledat</button>
+  </form>
+
+  <!-- 2) Hlavní formulář -->
+  <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+
+    <!-- Osobní údaje -->
+    <fieldset>
+      <legend>Osobní údaje</legend>
+      <div class="row">
+        <div class="field">
+          <label for="jmeno">Jméno <span class="req">*</span></label>
+          <input type="text" id="jmeno" name="jmeno" placeholder="Jan" required>
+        </div>
+        <div class="field">
+          <label for="prijmeni">Příjmení <span class="req">*</span></label>
+          <input type="text" id="prijmeni" name="prijmeni" placeholder="Novák" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="email">E-mail <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jan.novak@example.cz" required>
+        </div>
+        <div class="field">
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="+420 123 456 789" pattern="[+0-9 ]{9,16}">
+          <span class="hint">Formát: +420 123 456 789</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="web">Webová stránka</label>
+          <input type="url" id="web" name="web" placeholder="https://www.example.cz">
+        </div>
+        <div class="field">
+          <label for="narozeni">Datum narození</label>
+          <input type="date" id="narozeni" name="narozeni" max="2026-12-31">
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">Pohlaví</span>
+        <div class="inline">
+          <label><input type="radio" name="pohlavi" value="muz"> Muž</label>
+          <label><input type="radio" name="pohlavi" value="zena"> Žena</label>
+          <label><input type="radio" name="pohlavi" value="jine"> Jiné</label>
+          <label><input type="radio" name="pohlavi" value="nechci" checked> Nechci uvádět</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Přihlašovací údaje -->
+    <fieldset>
+      <legend>Účet</legend>
+      <div class="row">
+        <div class="field">
+          <label for="login">Uživatelské jméno</label>
+          <input type="text" id="login" name="login" minlength="3" maxlength="20" autocomplete="username">
+          <span class="hint">3 až 20 znaků</span>
+        </div>
+        <div class="field">
+          <label for="heslo">Heslo</label>
+          <input type="password" id="heslo" name="heslo" minlength="8" autocomplete="new-password">
+          <span class="hint">Minimálně 8 znaků</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="heslo2">Heslo znovu</label>
+        <input type="password" id="heslo2" name="heslo2" minlength="8" autocomplete="new-password">
+      </div>
+      <input type="hidden" name="verze_formulare" value="1.0">
+    </fieldset>
+
+    <!-- Adresa a výběry -->
+    <fieldset>
+      <legend>Adresa a výběr z možností</legend>
+      <div class="field">
+        <label for="ulice">Ulice a číslo popisné</label>
+        <input type="text" id="ulice" name="ulice">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="mesto">Město</label>
+          <input type="text" id="mesto" name="mesto" list="mesta" placeholder="Začněte psát…">
+          <datalist id="mesta">
+            <option value="Praha">
+            <option value="Brno">
+            <option value="Ostrava">
+            <option value="Plzeň">
+            <option value="Olomouc">
+            <option value="Opava">
+            <option value="Liberec">
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="psc">PSČ</label>
+          <input type="text" id="psc" name="psc" pattern="[0-9]{3} ?[0-9]{2}" placeholder="746 01" inputmode="numeric">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="zeme">Země</label>
+          <select id="zeme" name="zeme">
+            <option value="">– vyberte –</option>
+            <option value="cz" selected>Česká republika</option>
+            <option value="sk">Slovensko</option>
+            <option value="pl">Polsko</option>
+            <option value="de">Německo</option>
+            <option value="at">Rakousko</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="vzdelani">Nejvyšší dosažené vzdělání</label>
+          <select id="vzdelani" name="vzdelani">
+            <optgroup label="Základní a střední">
+              <option value="zs">Základní</option>
+              <option value="sos">Střední odborné</option>
+              <option value="sou">Střední s maturitou</option>
+            </optgroup>
+            <optgroup label="Vyšší a vysokoškolské">
+              <option value="vos">Vyšší odborné</option>
+              <option value="bc">Bakalářské</option>
+              <option value="mgr">Magisterské</option>
+              <option value="phd">Doktorské</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="jazyky">Jazyky, které ovládáte (více možností – Ctrl / Cmd)</label>
+        <select id="jazyky" name="jazyky" multiple size="5">
+          <option value="cs" selected>Čeština</option>
+          <option value="en">Angličtina</option>
+          <option value="de">Němčina</option>
+          <option value="pl">Polština</option>
+          <option value="es">Španělština</option>
+          <option value="fr">Francouzština</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <!-- Zájmy a preference -->
+    <fieldset>
+      <legend>Zájmy a preference</legend>
+      <div class="field">
+        <span class="label">Zájmy (checkboxy)</span>
+        <div class="inline">
+          <label><input type="checkbox" name="zajmy" value="sport"> Sport</label>
+          <label><input type="checkbox" name="zajmy" value="hudba" checked> Hudba</label>
+          <label><input type="checkbox" name="zajmy" value="cestovani"> Cestování</label>
+          <label><input type="checkbox" name="zajmy" value="programovani"> Programování</label>
+          <label><input type="checkbox" name="zajmy" value="cteni"> Čtení</label>
+          <label><input type="checkbox" name="zajmy" value="film"> Film</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">Preferovaný způsob kontaktu</span>
+        <div class="inline">
+          <label><input type="radio" name="kontakt" value="email" checked> E-mail</label>
+          <label><input type="radio" name="kontakt" value="telefon"> Telefon</label>
+          <label><input type="radio" name="kontakt" value="posta"> Pošta</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="oblibena-barva">Oblíbená barva</label>
+          <input type="color" id="oblibena-barva" name="barva" value="#3b5bdb">
+        </div>
+        <div class="field">
+          <label for="pocet">Počet kusů</label>
+          <input type="number" id="pocet" name="pocet" min="1" max="10" step="1" value="1">
+        </div>
+      </div>
+      <div class="field">
+        <label for="spokojenost">Spokojenost s webem: <output id="spokojenost-out" for="spokojenost">5</output> / 10</label>
+        <input type="range" id="spokojenost" name="spokojenost" min="0" max="10" step="1" value="5"
+               oninput="document.getElementById('spokojenost-out').textContent = this.value">
+      </div>
+    </fieldset>
+
+    <!-- Datum a čas -->
+    <fieldset>
+      <legend>Datum a čas</legend>
+      <div class="row">
+        <div class="field">
+          <label for="schuzka">Termín schůzky (datum a čas)</label>
+          <input type="datetime-local" id="schuzka" name="schuzka">
+        </div>
+        <div class="field">
+          <label for="cas">Preferovaný čas</label>
+          <input type="time" id="cas" name="cas" min="08:00" max="18:00">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="mesic">Měsíc</label>
+          <input type="month" id="mesic" name="mesic">
+        </div>
+        <div class="field">
+          <label for="tyden">Týden</label>
+          <input type="week" id="tyden" name="tyden">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Textová pole a soubory -->
+    <fieldset>
+      <legend>Zpráva a soubory</legend>
+      <div class="field">
+        <label for="predmet">Předmět</label>
+        <input type="text" id="predmet" name="predmet" maxlength="80">
+      </div>
+      <div class="field">
+        <label for="zprava">Zpráva</label>
+        <textarea id="zprava" name="zprava" rows="6" maxlength="1000" placeholder="Napište nám, co máte na srdci…"></textarea>
+        <span class="hint">Maximálně 1000 znaků</span>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="soubor">Příloha (jeden soubor)</label>
+          <input type="file" id="soubor" name="soubor" accept=".pdf,.doc,.docx,.png,.jpg">
+        </div>
+        <div class="field">
+          <label for="soubory">Další přílohy (více souborů)</label>
+          <input type="file" id="soubory" name="soubory" multiple>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Stavové prvky -->
+    <fieldset>
+      <legend>Stavové prvky</legend>
+      <div class="field">
+        <label for="postup">Vyplněnost formuláře (progress)</label>
+        <progress id="postup" value="65" max="100">65 %</progress>
+      </div>
+      <div class="field">
+        <label for="disk">Využití úložiště (meter)</label>
+        <meter id="disk" min="0" max="100" low="40" high="80" optimum="20" value="55">55 %</meter>
+      </div>
+      <div class="field">
+        <label for="zablokovano">Zakázané pole (disabled)</label>
+        <input type="text" id="zablokovano" value="Tuto hodnotu nelze změnit" disabled>
+      </div>
+      <div class="field">
+        <label for="readonly">Pouze pro čtení (readonly)</label>
+        <input type="text" id="readonly" value="Tuto hodnotu lze jen číst" readonly>
+      </div>
+    </fieldset>
+
+    <!-- Souhlasy -->
+    <fieldset>
+      <legend>Souhlasy</legend>
+      <div class="field">
+        <label style="font-weight:400;"><input type="checkbox" name="newsletter" value="ano"> Chci odebírat newsletter</label>
+      </div>
+      <div class="field">
+        <label style="font-weight:400;"><input type="checkbox" name="podminky" value="ano" required> Souhlasím s obchodními podmínkami <span class="req">*</span></label>
+      </div>
+    </fieldset>
+
+    <!-- Tlačítka -->
+    <fieldset>
+      <legend>Tlačítka</legend>
+      <div class="actions">
+        <button type="submit">Odeslat formulář</button>
+        <input type="submit" value="Odeslat (input)">
+        <button type="reset" class="secondary">Vymazat vše</button>
+        <input type="reset" value="Reset (input)">
+        <button type="button" class="secondary" onclick="alert('Tlačítko bez funkce odeslání.')">Obyčejné tlačítko</button>
+        <input type="button" value="Input button" onclick="alert('Ahoj!')">
+        <button type="button" class="danger" disabled>Zakázané tlačítko</button>
+      </div>
+    </fieldset>
+
+  </form>
+
+  <!-- 3) Samostatný přihlašovací formulář -->
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Rychlé přihlášení</legend>
+      <div class="row">
+        <div class="field">
+          <label for="prihl-email">E-mail</label>
+          <input type="email" id="prihl-email" name="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="prihl-heslo">Heslo</label>
+          <input type="password" id="prihl-heslo" name="heslo" autocomplete="current-password">
+        </div>
+      </div>
+      <div class="field">
+        <label style="font-weight:400;"><input type="checkbox" name="pamatovat"> Zůstat přihlášen</label>
+      </div>
+      <div class="actions">
+        <button type="submit">Přihlásit se</button>
+      </div>
+    </fieldset>
+  </form>
+
+</main>
+
+<footer>
+  &copy; 2026 – Školní projekt. Formulářové prvky nejsou funkční, slouží jen jako ukázka.<br>
+  <a href="https://vitekcharvat.github.io" target="_blank" rel="noopener">Moje portfolio</a>
+  <span>Bylo použio AI |<a href="https://claude.ai/share/5bc6d9f6-d407-404f-b2e7-7d7b05d29a3f" target="_blank" rel="noopener">Claude Sonnet 5.5</a></span>
+  <div class="validation-links" role="group" aria-label="Validace stránky">
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2Fgooglesearch%2Fform.html" target="_blank" rel="noopener noreferrer">Validace HTML</a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2Fgooglesearch%2Fform.css" target="_blank" rel="noopener noreferrer">Validace CSS</a>
+  </div>
+</footer>
+
+</body>
+</html>
