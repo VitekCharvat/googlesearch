@@ -118,6 +118,25 @@ form input[type="submit"]:hover {
     background-color: #005bb5;
 }
 
+form button {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top: 1.5rem;
+    padding: 8px 16px;
+    border: none;
+    background-color: var(--green-color);
+    color: white;
+    font-size: 1.125rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2c8e46;
+}
+
 main {
     flex: 1;
     display: flex;
